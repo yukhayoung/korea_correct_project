@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load socialaccount %}
+    {% providers_media_js%}
+
+    {% if user.is_autenticated %}
+    <a href="/accounts/logout">로그아웃</a><br>
+    {{user.username}}님이 로그인 중
+    
+    {% else %}
+    <a href=" {% provider_login_url 'google' %}">구글 로그인</a> <br><hr>
+    {% endif %}
+
+    <h1>대한민국 바로잡기</h1>
+    <div class="col-lg bg-black">
+        <img src="https://img.huffingtonpost.com/asset/5d6fccc33b00007902ccc20a.jpeg?ops=scalefit_630_noupscale" class="img-fluid" width="1000" height="600">
+    </div>
+    <hr>
+    <div class="container">
+    {% for koreaapp in koreaapps %}
+        <h3>{{koreaapp.title}}</h3>
+        {{koreaapp.writer}}
+        {{koreaapp.summary}} <a href="{% url 'detail' koreaapp.id %}">...more</a>
+    {% endfor %}
+    </div>
+
+{% endblock %}

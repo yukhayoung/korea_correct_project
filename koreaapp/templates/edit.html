@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>update new post</h1>
+
+<form action="{%url 'update' koreaapp.id %}" method="post">
+    {%csrf_token%}
+    <p>제목: <input type="text" name="title" value = "{{koreaapp.title}}"></p>
+    <p>작성자: <input type="text" name="writer" value = "{{koreaapp.writer}}"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10">{{koreaapp.body}}</textarea> 
+    <button type="submit"> submit </button>
+</form>
+{% endblock %}

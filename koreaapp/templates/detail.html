@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{koreaapp.title}}</h1>
+<div>
+작성자:{{koreaapp.writer}}
+<br>
+날짜:{{koreaapp.date}}
+</div>
+<hr>
+<p><img src="{{koreaapp.image.url}}" alt=""></p>
+<p>{{koreaapp.body}}</p>
+<a href="{%url 'edit' koreaapp.id %}">수정하기</a>
+<a href="{%url 'delete' koreaapp.id %}">삭제하기</a>
+{% endblock %}
