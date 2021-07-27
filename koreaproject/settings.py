@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'koreaapp',
-
+    
     #allauth
     'allauth',
     'allauth.account',
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'koreaproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['koreaproject/templates'],
+        'DIRS': ['koreaproject/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

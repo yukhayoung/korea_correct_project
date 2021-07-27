@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<p class="pp">제목을 누르면 상세페이지로 갈 수 있습니다.</p>
+
+{% for search in list %}
+<div class="row">
+    <a href="/koreaapp/{{ search.id }}">
+        <h4>{{ search.title }}</h4>
+    </a>
+    {{search.writer}}/
+    {{search.summary}}
+
+</div>
+{% endfor %}
+{% endblock %}
